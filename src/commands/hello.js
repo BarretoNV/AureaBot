@@ -1,7 +1,7 @@
-const execute = (bot, msg, args) => {};
-
 module.exports = {
-    name: 'olá',
-    help: 'olá, mundo!',
-    execute,
+    name: 'hello',
+    description: 'Responde sua mensagem com uma saudação aureana!',
+    execute(message, args) {
+        return message.reply(`Eaí, batendo muita meta??`);
+    }
 };
