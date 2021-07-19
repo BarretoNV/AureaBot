@@ -1,9 +1,24 @@
 const MessageEmbed = require('discord.js').MessageEmbed;
+const xlsx = require('xlsx');
+const fs = require('fs');
 
 /* const execute = (bot, msg, args) => {
     const embed = new MessageEmbed()
 
 } */
+
+const wb = xlsx.readFile('src/metas.xlsx');
+let worksheets = {};
+
+for (const sheetName of wb.SheetNames) {
+    worksheets[sheetName] = xlsx.utils.sheet_to_json(wb.Sheets[sheetName]);
+}
+
+
+
+console.log("json:\n", JSON.stringify(worksheets.Planilha1), "\n\n");
+console.log(worksheets.Planilha1); 
+
 
 const num = 16;
 const numMeta = 25;
@@ -20,7 +35,7 @@ module.exports = {
         .setDescription('Vamos buscar o TRI?')
         .setThumbnail('https://i.ibb.co/xgLnZt4/urea-Selo-Copia.png')
         .addFields(
-            { name: 'Projetos:', value: num , inline: true },
+            { name: 'Projetos:', value: worksheets.Planilha1 , inline: true },
             { name: 'Meta:', value: numMeta , inline: true },
             { name: '\u200B', value: '\u200B' },
             { name: 'Faturamento:', value: num , inline: true },

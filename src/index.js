@@ -17,6 +17,7 @@ for (var filename of commandFiles) {
 }
 
 
+
 bot.login(process.env.TOKEN);
 
 bot.on("ready", () => {
