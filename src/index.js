@@ -21,21 +21,12 @@ for (var filename of commandFiles) {
 bot.login(process.env.TOKEN);
 
 bot.on("ready", () => {
+
+    bot.user.setActivity('+help para comandos!', {
+        type: "WATCHING"
+    });
     console.log(`Logged in as ${bot.user.tag}!`);
 });
-
-/* bot.on('message', (msg) => {
-    if (!msg.content.startsWith(process.env.PREFIX) || msg.author.bot) return;
-
-    const args = msg.content.slice(process.env.PREFIX.length).split(" "); // pega as palavras da mensagem com prefixo separadas por espaços
-    const command = args.shift();
-
-    try {
-        bot.commands.get(command).execute(bot, msg, args);
-    } catch (e) {
-        return msg.reply("Opa, ainda não conheço esse comando!");
-    }
-}); */
 
 bot.on('message', message => {
 	if (!message.content.startsWith(process.env.PREFIX) || message.author.bot) return;
