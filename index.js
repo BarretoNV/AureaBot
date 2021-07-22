@@ -40,6 +40,6 @@ bot.on('message', message => {
 		bot.commands.get(command).execute(message, args);
 	} catch (error) {
 		console.error(error);
-		message.reply('Um erro ocorreu e não foi possível executar esse comando! Entre em contato com alguém da equipe de <@&id_computação>');
+		message.reply('Um erro ocorreu e não foi possível executar esse comando! Entre em contato com alguém da equipe de computação');
 	}
 });

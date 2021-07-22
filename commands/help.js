@@ -12,7 +12,7 @@ const dotenv = require('dotenv');
 
 module.exports = {
 	name: 'help',
-	description: 'List all of my commands or info about a specific command.',
+	description: 'Lista de comandos e descrição do que eles fazem.',
 	aliases: ['commands'],
 	usage: '[command name]',
 	cooldown: 5,

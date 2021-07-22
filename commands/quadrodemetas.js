@@ -7,7 +7,7 @@ const fs = require('fs');
 
 } */
 
-const wb = xlsx.readFile('src/metas.xlsx');
+const wb = xlsx.readFile('metas.xlsx');
 let worksheets = {};
 
 for (const sheetName of wb.SheetNames) {
@@ -19,9 +19,6 @@ for (const sheetName of wb.SheetNames) {
 /* console.log("json:\n", JSON.stringify(worksheets.Planilha1), "\n\n");
 console.log(worksheets.Planilha1);  */  // MOSTRA SE O JSON DA PLANILHA DO EXCEL ESTA CORRETO
 
-
-const num = 16;
-const numMeta = 25;
 
 module.exports = {
     name: "metas",
